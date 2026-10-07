@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b0mik77376jfc"]
+
+[ext_resource type="FontFile" uid="uid://d2q2kugyctmol" path="res://Assets/Fonts/Baskervville/static/Baskervville-Regular.ttf" id="1_1mti1"]
+
+[resource]
+default_font = ExtResource("1_1mti1")
+/colors/default_color = Color(0.76156104, 0.76156086, 0.761561, 1)
+/font_sizes/paragraph_separation = 10

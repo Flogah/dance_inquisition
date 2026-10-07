@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d20rnroimqc2t" path="res://Interface/Dialogue/dialogue_manager.gd" id="1_1w1t2"]
 [ext_resource type="Script" uid="uid://i0gbkagxjmme" path="res://Interface/Dialogue/scroll_container.gd" id="1_66pnj"]
 [ext_resource type="Texture2D" uid="uid://w3shf5rbnesv" path="res://icon.svg" id="1_f4nbm"]
+[ext_resource type="Theme" uid="uid://b0mik77376jfc" path="res://Interface/InterfaceThemes/Theme_Baskerville.tres" id="4_od80q"]
 
 [node name="DialogueSystem" type="CanvasLayer" unique_id=2051798082]
 script = ExtResource("1_1w1t2")
@@ -71,12 +72,10 @@ size_flags_vertical = 3
 theme_override_constants/separation = 26
 alignment = 2
 
-[node name="Label" type="Label" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=183836065]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=1174162054]
 layout_mode = 2
-text = "1.: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=673353291]
-layout_mode = 2
-text = "2.: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-autowrap_mode = 2
+theme = ExtResource("4_od80q")
+text = "1.: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+fit_content = true
