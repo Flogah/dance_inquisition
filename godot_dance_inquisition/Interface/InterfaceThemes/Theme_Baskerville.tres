@@ -1,8 +1,21 @@
 [gd_resource type="Theme" format=3 uid="uid://b0mik77376jfc"]
 
 [ext_resource type="FontFile" uid="uid://d2q2kugyctmol" path="res://Assets/Fonts/Baskervville/static/Baskervville-Regular.ttf" id="1_1mti1"]
+[ext_resource type="FontFile" uid="uid://fkiutk58d08u" path="res://Assets/Fonts/Baskervville/static/Baskervville-Bold.ttf" id="1_16ysk"]
+[ext_resource type="FontFile" uid="uid://cy2f4itv3dhs" path="res://Assets/Fonts/Baskervville/static/Baskervville-BoldItalic.ttf" id="2_t8i0o"]
+[ext_resource type="FontFile" uid="uid://clsknsfkd1pvd" path="res://Assets/Fonts/Baskervville/static/Baskervville-Italic.ttf" id="3_44upb"]
+[ext_resource type="FontFile" uid="uid://c1bwhgc76bm3h" path="res://Assets/Fonts/Baskervville/static/Baskervville-Medium.ttf" id="5_44upb"]
+[ext_resource type="FontFile" uid="uid://dkgjg3w01vqtf" path="res://Assets/Fonts/Baskervville/Baskervville-VariableFont_wght.ttf" id="6_afpy8"]
 
 [resource]
-default_font = ExtResource("1_1mti1")
-/colors/default_color = Color(0.76156104, 0.76156086, 0.761561, 1)
-/font_sizes/paragraph_separation = 10
+default_font = ExtResource("6_afpy8")
+default_font_size = 14
+RichTextLabel/colors/default_color = Color(0.99985904, 0.28788236, 0.29040003, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 5
+RichTextLabel/constants/paragraph_separation = 8
+RichTextLabel/fonts/bold_font = ExtResource("1_16ysk")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_t8i0o")
+RichTextLabel/fonts/italics_font = ExtResource("3_44upb")
+RichTextLabel/fonts/mono_font = ExtResource("1_1mti1")
+RichTextLabel/fonts/normal_font = ExtResource("5_44upb")
