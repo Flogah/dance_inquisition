@@ -30,13 +30,10 @@ func create_rich_label(text:String) -> RichTextLabel:
 	return new_label
 
 func add_choices(choice_dict:Dictionary):
-	var new_choice_text:String = ""
+	var new_vbox:VBoxContainer = VBoxContainer.new()
+	dialogue_container.add_child(new_vbox)
 	for num in choice_dict.size():
-		new_choice_text += '[p][url="' + str(num+1) + '"]'
-		new_choice_text += choice_dict[num+1]
-		new_choice_text += '[/url][/p]'
-	var label:RichTextLabel = create_rich_label(new_choice_text)
-	label.meta_clicked.connect(on_option_selected)
-
-func on_option_selected(choice):
-	choice_selected.emit(choice)
+		var new_button:Button = Button.new()
+		new_button.text = choice_dict[num+1]
+		new_button.pressed.connect(func(): choice_selected.emit(num+1))
+		new_vbox.add_child(new_button)
