@@ -15,13 +15,6 @@ func _ready() -> void:
 	set_visibility(false)
 	scroll_container.choice_selected.connect(use_choice)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("next_step"):
-		if visible:
-			add_dialogue_choices()
-		else:
-			appear()
-
 func use_choice(choice):
 	print(choice)
 

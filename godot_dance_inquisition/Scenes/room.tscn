@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhkeml1kux7st" path="res://Scenes/player.tscn" id="1_mbine"]
 [ext_resource type="PackedScene" uid="uid://6lodr0q515bt" path="res://Scenes/door.tscn" id="2_lsht4"]
+[ext_resource type="PackedScene" uid="uid://dm0ifuhekrw2y" path="res://Scenes/guilty_monk.tscn" id="3_fr46g"]
 
 [node name="Room" type="Node3D" unique_id=840673393]
 
@@ -65,3 +66,6 @@ size = Vector3(2.4327393, 0.023, 1.9628906)
 transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -2.5, 0.969, 1.5439453)
 use_collision = true
 size = Vector3(1.9121094, 0.023, 1.9628906)
+
+[node name="GuiltyMonk" parent="." unique_id=1944299037 instance=ExtResource("3_fr46g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3537903, 0, -1.4425659)
