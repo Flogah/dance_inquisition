@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://dta2cqlo02ui2"]
+
+[ext_resource type="FontFile" uid="uid://d6q3hicokmj6" path="res://Assets/Fonts/Libron/Libron-Bold.ttf" id="1_4ej08"]
+[ext_resource type="FontFile" uid="uid://vfoo0sqe1500" path="res://Assets/Fonts/Libron/Libron-BoldItalic.ttf" id="2_h81mx"]
+[ext_resource type="FontFile" uid="uid://cgxjcso2xrsyn" path="res://Assets/Fonts/Libron/Libron-Italic.ttf" id="3_j6nv7"]
+[ext_resource type="FontFile" uid="uid://ctsgyq2oih65c" path="res://Assets/Fonts/Libron/Libron-Regular.ttf" id="4_2im20"]
+
+[resource]
+default_font = ExtResource("4_2im20")
+default_font_size = 14
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/paragraph_separation = 8
+RichTextLabel/fonts/bold_font = ExtResource("1_4ej08")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_h81mx")
+RichTextLabel/fonts/italics_font = ExtResource("3_j6nv7")
+RichTextLabel/fonts/mono_font = ExtResource("4_2im20")
+RichTextLabel/fonts/normal_font = ExtResource("4_2im20")
