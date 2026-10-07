@@ -1,0 +1,135 @@
+[gd_resource type="Resource" script_class="SproutyDialogsDialogueData" format=3 uid="uid://c3i8ec1rlk0uo"]
+
+[ext_resource type="Script" uid="uid://cbjdca3iwlx36" path="res://addons/sprouty_dialogs/resources/dialogue_data.gd" id="1_k4t7b"]
+
+[resource]
+script = ExtResource("1_k4t7b")
+graph_data = {
+"TEST_CONVERSATION": {
+"dialogue_node_1": {
+"char_expand": true,
+"character": "Inquisitor",
+"dialog_key": "TEST_CONVERSATION_DIALOG_1",
+"node_index": 1,
+"node_type": "dialogue_node",
+"offset": Vector2(440, -120),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["dialogue_node_2"]
+},
+"dialogue_node_2": {
+"char_expand": true,
+"character": "Monk",
+"dialog_key": "TEST_CONVERSATION_DIALOG_2",
+"node_index": 2,
+"node_type": "dialogue_node",
+"offset": Vector2(740, -120),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["options_node_1"]
+},
+"dialogue_node_3": {
+"char_expand": true,
+"character": "Inquisitor",
+"dialog_key": "TEST_CONVERSATION_DIALOG_3",
+"node_index": 3,
+"node_type": "dialogue_node",
+"offset": Vector2(1400, -200),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"dialogue_node_4": {
+"char_expand": true,
+"character": "",
+"dialog_key": "TEST_CONVERSATION_DIALOG_4",
+"node_index": 4,
+"node_type": "dialogue_node",
+"offset": Vector2(1400, 320),
+"portrait": "",
+"size": Vector2(250, 439),
+"to_dialog": "",
+"to_node": ["END"]
+},
+"options_node_1": {
+"node_index": 1,
+"node_type": "options_node",
+"offset": Vector2(1040, -60),
+"options_conditions": [{
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"visibility": 0
+}, {
+"enabled": false,
+"first_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"operator": 0,
+"second_var": {
+"metadata": {},
+"type": 40,
+"value": ""
+},
+"visibility": 0
+}],
+"options_keys": ["TEST_CONVERSATION_OPT1_1", "TEST_CONVERSATION_OPT1_2"],
+"size": Vector2(250, 467),
+"to_dialog": "",
+"to_node": ["dialogue_node_3", "dialogue_node_4"]
+},
+"start_node_1": {
+"node_index": 1,
+"node_type": "start_node",
+"offset": Vector2(20, -40),
+"size": Vector2(360, 87),
+"start_id": "TEST_CONVERSATION",
+"to_dialog": "",
+"to_node": ["dialogue_node_1"]
+}
+}
+}
+dialogs = {
+"TEST_CONVERSATION_DIALOG_1": {
+"default": "Servus.",
+"en": ""
+},
+"TEST_CONVERSATION_DIALOG_2": {
+"default": "Salve.",
+"en": ""
+},
+"TEST_CONVERSATION_DIALOG_3": {
+"default": "Ja, Sie haben schon recht.",
+"en": ""
+},
+"TEST_CONVERSATION_DIALOG_4": {
+"default": "Wie können Sie es wagen!",
+"en": ""
+},
+"TEST_CONVERSATION_OPT1_1": {
+"default": "Du Satanistenschwein!"
+},
+"TEST_CONVERSATION_OPT1_2": {
+"default": "[i]Ihn anspucken[/i]"
+}
+}
+characters = {
+"TEST_CONVERSATION": {
+"Inquisitor": 5152508930690893529,
+"Monk": 8421668132068473150
+}
+}
