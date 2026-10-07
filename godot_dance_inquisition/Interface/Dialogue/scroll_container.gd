@@ -17,7 +17,7 @@ func add_text(speaker:String = "Unknown", text:String = "..."):
 	var format_string:String = "{spkr}: {txt}"
 	var new_text:String = format_string.format({"spkr": speaker, "txt": text})
 	
-	var new_label:Label = Label.new()
+	var new_label:RichTextLabel = RichTextLabel.new()
 	new_label.text = new_text
 	dialogue_container.add_child(new_label)
 	call_deferred("scroll_to_last")
