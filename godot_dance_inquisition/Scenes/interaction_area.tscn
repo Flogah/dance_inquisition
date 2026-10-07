@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ds6pltcci6mtv"]
+
+[ext_resource type="Script" uid="uid://cwmby5i1bhwxm" path="res://interaction_area.gd" id="1_5e3bj"]
+
+[node name="InteractionArea" type="Area3D" unique_id=761187986]
+script = ExtResource("1_5e3bj")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
