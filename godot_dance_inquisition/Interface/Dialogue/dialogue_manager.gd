@@ -1,6 +1,50 @@
 extends CanvasLayer
 
 @onready var scroll_container: ScrollContainer = %ScrollContainer
+@onready var main_control: Control = %MainControl
+
+var disappear_distance:Vector2 = Vector2(50.0, 0.0)
+var anim_duration:float = 0.5
+
+func _ready() -> void:
+	set_visibility(false)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("next_step"):
+		if visible:
+			disappear()
+		else:
+			appear()
+
+func set_visibility(b:bool):
+	if b:
+		main_control.modulate = Color(1.0, 1.0, 1.0, 1.0)
+		main_control.position = Vector2.ZERO
+		visible = true
+	else:
+		main_control.modulate = Color(1.0, 1.0, 1.0, 0.0)
+		main_control.position = disappear_distance
+		visible = false
+
+func appear():
+	# set visible first, might be replaced with processing
+	visible = true
+	
+	var appear_tween:Tween = create_tween()
+	appear_tween.set_parallel()
+	appear_tween.tween_property(main_control, "modulate", Color(1.0, 1.0, 1.0, 1.0), anim_duration)
+	appear_tween.tween_property(main_control, "position", Vector2(0.0, 0.0), anim_duration)
+
+func disappear():
+	var disappear_tween:Tween = create_tween()
+	disappear_tween.set_parallel()
+	disappear_tween.tween_property(main_control, "modulate", Color(1.0, 1.0, 1.0, 0.0), anim_duration)
+	disappear_tween.tween_property(main_control, "position", disappear_distance, anim_duration)
+	
+	# make the dialogue officially invisible
+	# maybe not necessary, as the dialogue is already alphad out?
+	# maybe saves perf
+	disappear_tween.finished.connect(func(): visible = false)
 
 func add_dialogue_choices():
 	pass
