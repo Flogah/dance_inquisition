@@ -7,7 +7,8 @@
 [node name="DialogueSystem" type="CanvasLayer" unique_id=2051798082]
 script = ExtResource("1_1w1t2")
 
-[node name="Control" type="Control" parent="." unique_id=646766049]
+[node name="MainControl" type="Control" parent="." unique_id=646766049]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1306037198]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainControl" unique_id=1306037198]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,15 +24,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeftEmpty" type="Control" parent="Control/HBoxContainer" unique_id=345915596]
+[node name="LeftEmpty" type="Control" parent="MainControl/HBoxContainer" unique_id=345915596]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MiddlePortrait" type="Control" parent="Control/HBoxContainer" unique_id=565633526]
+[node name="MiddlePortrait" type="Control" parent="MainControl/HBoxContainer" unique_id=565633526]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/MiddlePortrait" unique_id=509984829]
+[node name="TextureRect" type="TextureRect" parent="MainControl/HBoxContainer/MiddlePortrait" unique_id=509984829]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -45,11 +46,11 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("1_f4nbm")
 
-[node name="RightDialogue" type="PanelContainer" parent="Control/HBoxContainer" unique_id=139357837]
+[node name="RightDialogue" type="PanelContainer" parent="MainControl/HBoxContainer" unique_id=139357837]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/RightDialogue" unique_id=325989113]
+[node name="MarginContainer" type="MarginContainer" parent="MainControl/HBoxContainer/RightDialogue" unique_id=325989113]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 15
@@ -57,12 +58,12 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/HBoxContainer/RightDialogue/MarginContainer" unique_id=805272343]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer" unique_id=805272343]
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("1_66pnj")
 
-[node name="DialogueContainer" type="VBoxContainer" parent="Control/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer" unique_id=1901109376]
+[node name="DialogueContainer" type="VBoxContainer" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer" unique_id=1901109376]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -70,12 +71,12 @@ size_flags_vertical = 3
 theme_override_constants/separation = 26
 alignment = 2
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=183836065]
+[node name="Label" type="Label" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=183836065]
 layout_mode = 2
 text = "1.: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Control/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=673353291]
+[node name="Label2" type="Label" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=673353291]
 layout_mode = 2
 text = "2.: At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
 autowrap_mode = 2

@@ -5,9 +5,9 @@ extends ScrollContainer
 func _ready() -> void:
 	call_deferred("scroll_to_last")
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("next_step"):
-		add_text()
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("next_step"):
+		#add_text()
 
 func scroll_to_last() -> void:
 	var max_val = get_v_scroll_bar().max_value
