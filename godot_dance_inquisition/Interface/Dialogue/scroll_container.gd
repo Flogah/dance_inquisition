@@ -20,18 +20,23 @@ func add_dialogue_text(speaker:String = "Unknown", text:String = "..."):
 	var new_text:String = format_string.format({"spkr": speaker, "txt": text})
 	create_rich_label(new_text)
 
-func create_rich_label(text:String):
+func create_rich_label(text:String) -> RichTextLabel:
 	var new_label:RichTextLabel = RichTextLabel.new()
 	new_label.bbcode_enabled = true
 	new_label.fit_content = true
 	new_label.text = text
 	dialogue_container.add_child(new_label)
 	call_deferred("scroll_to_last")
+	return new_label
 
 func add_choices(choice_dict:Dictionary):
 	var new_choice_text:String = ""
 	for num in choice_dict.size():
-		new_choice_text += '[p][url="func(): choice_selected.emit(' + str(num+1) + ')"]'
+		new_choice_text += '[p][url="' + str(num+1) + '"]'
 		new_choice_text += choice_dict[num+1]
 		new_choice_text += '[/url][/p]'
-	create_rich_label(new_choice_text)
+	var label:RichTextLabel = create_rich_label(new_choice_text)
+	label.meta_clicked.connect(on_option_selected)
+
+func on_option_selected(choice):
+	choice_selected.emit(choice)
