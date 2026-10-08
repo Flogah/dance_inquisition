@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwv3pa7te154h"]
+
+[ext_resource type="Script" uid="uid://dtlnspsam38tp" path="res://Examples/main.gd" id="1_272bs"]
+[ext_resource type="Resource" uid="uid://gu3eyq2456ws" path="res://Examples/test.dialogue" id="2_o0rba"]
+[ext_resource type="PackedScene" uid="uid://o4hnyr0rfnhr" path="res://addons/disco_tools/UI/DevUI.tscn" id="3_l5fr0"]
+
+[node name="Node2D" type="Node2D" unique_id=217923755]
+script = ExtResource("1_272bs")
+dialogue = ExtResource("2_o0rba")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1421121690]
+layer = 101
+
+[node name="DevUI" parent="CanvasLayer" unique_id=260285442 instance=ExtResource("3_l5fr0")]

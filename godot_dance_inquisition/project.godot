@@ -15,10 +15,21 @@ run/main_scene="uid://b3wuj01po3l5c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*uid://c3rodes2l3gxb"
+Disco="*uid://ddd5dr6mgrair"
+DiscoDevtools="*uid://dj6spbvoj668o"
+DiscoUtils="*uid://1dprr47q8j5l"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/disco_tools/plugin.cfg")
 
 [file_customization]
 
@@ -55,6 +66,10 @@ move_down={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Examples/test.dialogue")
 
 [physics]
 

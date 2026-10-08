@@ -1,0 +1,85 @@
+# This allows "Disco.events" to be shortened to "events"
+# You can get the same effect by adding "Disco" 
+# to your state autoload shortcuts
+# https://github.com/nathanhoad/godot_dialogue_manager/blob/main/docs/Conditions_Mutations.md#state-shortcuts
+using Disco
+
+~ start
+Fireye: Welcome to the demo! Play through this thing to get an idea of how disco tools works.
+Fireye: Here I'm checking the state of an event, and branching based on the outcome.
+if boolEventStatus("excited"):
+	Fireye: Here's a test branch! (Excited is success)
+else:
+	Fireye: Here's a test branch, or whatever. (Excited is not success)
+Fireye: Now I'll demo a check. Play around with the check parameters yourself to see how it affects the result
+Fireye: Oh look a rock! Should I jump over it?
+- Sure ({{rollOddsPlayer("jump_over_rock")}}% Success)
+	Fireye: Rolls must be on their own lines for async (You can't $> if(rollPlayer()):)
+	$> rollPlayer("jump_over_rock"):
+	Fireye: Disco.rollResult is automatically written after a roll
+	if rollResult:
+		Fireye: Hell yeah! Nice jump!
+	else: 
+		Fireye: *BONK* OW MY NOSE! THIS WAS A BAD IDEA
+- Nah
+	Fireye: Booooring
+
+=> save_and_load
+
+~ save_and_load
+
+####### State reset demo #######
+
+Fireye: State is saved to a special path automatically on game start
+Fireye: You can reset to this saved state by calling resetState()
+Fireye: This will echo the current value of the "trigger" event.
+Fireye: Trigger is {{events["trigger"].status}} 
+Fireye: You can change it in the state.events section of the Disco autoload
+
+$> events["trigger"].status = EEventStatus.SUCCESS # 1
+Fireye: Trigger has changed to {{events["trigger"].status}}
+
+# Resets state to game start
+$> resetState() # 0
+Fireye: State reset! Trigger is now {{events["trigger"].status}}
+
+####### Standard Save & load demo #######
+Fireye: Let's test manual saves
+$> events["trigger"].status = EEventStatus.SUCCESS # 1
+Fireye: Trigger has changed to {{events["trigger"].status}} and the state has been Saved.
+
+$> save_state()
+$> events["trigger"].status = EEventStatus.FAILURE # 2
+Fireye: Trigger has been changed to {{events["trigger"].status}} 
+
+$> load_state() # 1
+Fireye: Save Loaded! Trigger is now {{events["trigger"].status}}
+
+Fireye: Saves overwrite each other, unless provided another path as an argument
+$> events["trigger"].status = EEventStatus.FAILURE # 2
+Fireye: Trigger has been changed to {{events["trigger"].status}} and the state has been saved! 
+$> save_state()
+$> load_state() # 2
+Fireye: Save Loaded! Trigger is now {{events["trigger"].status}}, showing the previous save has been overwritten
+
+=> data
+
+~ data
+Fireye: Now let's test data!
+Fireye: The data system is disco tools' key/value store
+Fireye: We have an int called "iterator" set to {{getData("iterator")}}
+Fireye: Now give me a name!
+- Mike
+	# You can also access data values like this:
+	$> data["playerName"].value = "Mike"
+- Emily
+	$> setData("playerName", "Emily")
+- Balthazar the Consumer 
+	$> setData("playerName", "Balthazar the Consumer")
+Fireye: Now let's branch off that iterator
+if getData("iterator") > 10:
+	Fireye: {{getData("playerName")}} is cool!
+else:
+	Fireye: {{getData("playerName")}} is fine I guess.
+Fireye: Data values leverage the godot Variant type. Use it responsibly!
+=> END    

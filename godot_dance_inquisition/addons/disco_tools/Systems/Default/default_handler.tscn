@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://bg80q6nv830tc"]
+
+[ext_resource type="Script" uid="uid://c007pm2sv7v6c" path="res://addons/disco_tools/Systems/Default/DefaultHandler.gd" id="1_rjskg"]
+
+[sub_resource type="Animation" id="Animation_lcgge"]
+resource_name = "Entry"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer2:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.2191398, 2.2191398),
+"update": 0,
+"values": [-202.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MarginContainer2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299, 202)]
+}
+
+[sub_resource type="Animation" id="Animation_hyb0f"]
+resource_name = "Exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer2/MarginContainer/VBoxContainer/FoldableContainer:folded")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MarginContainer2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(0.2773923, 0.2773923),
+"update": 0,
+"values": [0.0, -202.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer2:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299, 202)]
+}
+
+[sub_resource type="Animation" id="Animation_uqx1w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer2/MarginContainer/VBoxContainer/FoldableContainer:folded")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/MarginContainer2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299, 202)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/MarginContainer2:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-202.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqx1w"]
+_data = {
+&"Entry": SubResource("Animation_lcgge"),
+&"Exit": SubResource("Animation_hyb0f"),
+&"RESET": SubResource("Animation_uqx1w")
+}
+
+[node name="DefaultHandler" type="CanvasLayer" unique_id=1417058360]
+script = ExtResource("1_rjskg")
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=393499454]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_uqx1w")
+
+[node name="Control" type="Control" parent="." unique_id=1744381566]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control" unique_id=2058787696]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.5
+offset_top = -202.0
+offset_right = 149.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer2" unique_id=1708759530]
+layout_mode = 2
+color = Color(0.20887864, 0.2088786, 0.2088786, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer2" unique_id=434780266]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer2/MarginContainer" unique_id=463848565]
+layout_mode = 2
+
+[node name="Calc" type="Label" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1299499576]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Roll = 2d8 + Xd8 hope - Yd8 difficulty"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1246578043]
+layout_mode = 2
+folded = true
+title = "+ Modifiers"
+
+[node name="ModList" type="VBoxContainer" parent="Control/MarginContainer2/MarginContainer/VBoxContainer/FoldableContainer" unique_id=363927185]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Rolls" type="Label" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=697556694]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Results = 8, 4, 2"
+
+[node name="Success" type="Label" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1790110588]
+unique_name_in_owner = true
+layout_mode = 2
+text = "(Success on a 7 or an 8)"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1745099551]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1725359466]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SUCCESS"
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="Control/MarginContainer2/MarginContainer/VBoxContainer" unique_id=1577595535]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue?"

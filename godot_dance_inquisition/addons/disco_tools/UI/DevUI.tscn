@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://o4hnyr0rfnhr"]
+
+[ext_resource type="Script" uid="uid://cbs7tcnmnxxkr" path="res://addons/disco_tools/UI/DevUI.gd" id="1_r88gg"]
+
+[node name="DevUI" type="Control" unique_id=260285442]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_r88gg")
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1821574659]
+layout_mode = 1
+offset_right = 139.0
+offset_bottom = 31.0
+selected = 0
+item_count = 3
+popup/item_0/text = "Force Off"
+popup/item_0/id = 0
+popup/item_1/text = "Force Success"
+popup/item_1/id = 1
+popup/item_2/text = "Force Failure"
+popup/item_2/id = 2
+
+[connection signal="item_selected" from="OptionButton" to="." method="ItemSelected"]

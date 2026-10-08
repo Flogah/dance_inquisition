@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ddd5dr6mgrair"]
+
+[ext_resource type="Script" uid="uid://c5noaqtka4vvc" path="res://addons/disco_tools/Autoloads/DiscoTools.gd" id="1_ddaen"]
+[ext_resource type="Script" uid="uid://c0440qk73mjls" path="res://addons/disco_tools/Resources/EntityRes.gd" id="2_4l0fm"]
+[ext_resource type="Script" uid="uid://b8onyh44yg7g6" path="res://addons/disco_tools/Resources/DataRes.gd" id="2_finlh"]
+[ext_resource type="Script" uid="uid://ox8kmc4ufu50" path="res://addons/disco_tools/Resources/MissionRes.gd" id="3_ov516"]
+[ext_resource type="Script" uid="uid://2ixohomundh2" path="res://addons/disco_tools/Resources/EventRes.gd" id="4_f21d8"]
+[ext_resource type="Script" uid="uid://c007pm2sv7v6c" path="res://addons/disco_tools/Systems/Default/DefaultHandler.gd" id="4_j3ygj"]
+[ext_resource type="Script" uid="uid://b4spmhy8h57b7" path="res://addons/disco_tools/Resources/CheckRes.gd" id="5_f21d8"]
+[ext_resource type="Script" uid="uid://bpomg8q84eu1g" path="res://addons/disco_tools/Resources/StateRes.gd" id="5_r830j"]
+[ext_resource type="Script" uid="uid://buj34xjp5lod7" path="res://addons/disco_tools/Systems/Default/DefaultModRes.gd" id="6_j3ygj"]
+[ext_resource type="PackedScene" uid="uid://bg80q6nv830tc" path="res://addons/disco_tools/Systems/Default/default_handler.tscn" id="6_r830j"]
+[ext_resource type="Script" uid="uid://mk35xqpx0dht" path="res://addons/disco_tools/Systems/Default/DefaultCheckRes.gd" id="7_feq1w"]
+
+[sub_resource type="Resource" id="Resource_cp3ga"]
+script = ExtResource("2_finlh")
+name = "iterator"
+value = 0
+metadata/_custom_type_script = "uid://b8onyh44yg7g6"
+
+[sub_resource type="Resource" id="Resource_8o7ow"]
+script = ExtResource("2_finlh")
+name = "playerName"
+value = "none"
+metadata/_custom_type_script = "uid://b8onyh44yg7g6"
+
+[sub_resource type="Resource" id="Resource_oxs2k"]
+script = ExtResource("2_finlh")
+name = "total"
+value = 0.0
+metadata/_custom_type_script = "uid://b8onyh44yg7g6"
+
+[sub_resource type="Resource" id="Resource_birg2"]
+script = ExtResource("2_4l0fm")
+metadata/_custom_type_script = "uid://c0440qk73mjls"
+
+[sub_resource type="Resource" id="Resource_j3ygj"]
+script = ExtResource("4_f21d8")
+name = "excited"
+status = 1
+metadata/_custom_type_script = "uid://2ixohomundh2"
+
+[sub_resource type="Resource" id="Resource_516cs"]
+script = ExtResource("4_f21d8")
+name = "trigger"
+status = 1
+metadata/_custom_type_script = "uid://2ixohomundh2"
+
+[sub_resource type="Resource" id="Resource_88y6j"]
+script = ExtResource("3_ov516")
+metadata/_custom_type_script = "uid://ox8kmc4ufu50"
+
+[sub_resource type="Resource" id="Resource_wghic"]
+script = ExtResource("7_feq1w")
+name = "jump_over_rock"
+metadata/_custom_type_script = "uid://mk35xqpx0dht"
+
+[sub_resource type="Resource" id="Resource_w5rgh"]
+script = ExtResource("5_r830j")
+rollHandler = ExtResource("6_r830j")
+handlerScript = ExtResource("4_j3ygj")
+events = Dictionary[String, ExtResource("4_f21d8")]({
+"excited": SubResource("Resource_j3ygj"),
+"trigger": SubResource("Resource_516cs")
+})
+eventList = Array[ExtResource("4_f21d8")]([SubResource("Resource_j3ygj"), SubResource("Resource_516cs")])
+data = Dictionary[String, ExtResource("2_finlh")]({
+"iterator": SubResource("Resource_cp3ga"),
+"playerName": SubResource("Resource_8o7ow"),
+"total": SubResource("Resource_oxs2k")
+})
+dataList = Array[ExtResource("2_finlh")]([SubResource("Resource_cp3ga"), SubResource("Resource_8o7ow")])
+missionList = Array[ExtResource("3_ov516")]([SubResource("Resource_88y6j")])
+entityList = Array[ExtResource("2_4l0fm")]([SubResource("Resource_birg2")])
+playerChecks = Dictionary[String, ExtResource("5_f21d8")]({
+"jump_over_rock": SubResource("Resource_wghic")
+})
+playerCheckList = Array[ExtResource("5_f21d8")]([SubResource("Resource_wghic")])
+metadata/_custom_type_script = "uid://bpomg8q84eu1g"
+
+[node name="DiscoTools" type="Node" unique_id=1457147164]
+script = ExtResource("1_ddaen")
+state = SubResource("Resource_w5rgh")
