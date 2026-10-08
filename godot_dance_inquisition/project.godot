@@ -85,16 +85,16 @@ translation/csv_files/fallback_to_resource=true
 translation/characters/translate_character_names=false
 translation/characters/use_csv_for_character_names=false
 translation/characters/character_names_csv=-1
-translation/localization/default_locale="en"
-translation/localization/locales=["en"]
+translation/localization/default_locale="de"
+translation/localization/locales=["en", "de"]
 internal/variables={}
-internal/play_dialog_path=""
-internal/play_start_id=""
+internal/play_dialog_path="res://Scripts/Dialogue/SproutyTest.tres"
+internal/play_start_id="TEST_CONVERSATION"
 internal/last_opened_files=[{
 "path": "res://Scripts/Dialogue/SproutyTest.tres",
 "uid": 6756654961219639610,
 "view_state": {
-"scroll_offset": Vector2(-74.22093, -216.60677),
+"scroll_offset": Vector2(-221.09332, -84.16493),
 "zoom": 0.25582474
 }
 }, {
@@ -130,4 +130,4 @@ internal/last_opened_files=[{
 "selected_portrait_path": ""
 }
 }]
-internal/last_selected_file_index=1
+internal/last_selected_file_index=2

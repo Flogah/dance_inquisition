@@ -1,7 +1,8 @@
 extends CanvasLayer
 
-@onready var scroll_container: ScrollContainer = %ScrollContainer
+#@onready var scroll_container: ScrollContainer = %ScrollContainer
 @onready var main_control: Control = %MainControl
+@onready var dialog_player: DialogPlayer = %DialogPlayer
 
 var disappear_distance:Vector2 = Vector2(50.0, 0.0)
 var anim_duration:float = 0.5
@@ -12,13 +13,14 @@ var example_choice_dict:Dictionary = {
 }
 
 func _ready() -> void:
-	set_visibility(false)
-	scroll_container.choice_selected.connect(use_choice)
+	set_visibility(true)
+	##scroll_container.choice_selected.connect(use_choice)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("next_step"):
 		if visible:
-			add_dialogue_choices()
+			#add_dialogue_choices()
+			dialog_player.start()
 		else:
 			appear()
 
@@ -55,8 +57,8 @@ func disappear():
 	# maybe saves perf
 	disappear_tween.finished.connect(func(): visible = false)
 
-func add_dialogue_choices(choice_dict:Dictionary = example_choice_dict):
-	scroll_container.add_choices(choice_dict)
-
-func display_speech(actor:String, text:String):
-	scroll_container.add_dialogue_text(actor, text)
+#func add_dialogue_choices(choice_dict:Dictionary = example_choice_dict):
+	#scroll_container.add_choices(choice_dict)
+#
+#func display_speech(actor:String, text:String):
+	#scroll_container.add_dialogue_text(actor, text)

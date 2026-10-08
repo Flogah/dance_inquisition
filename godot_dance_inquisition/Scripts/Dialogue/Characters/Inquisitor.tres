@@ -6,7 +6,9 @@
 script = ExtResource("1_vhmr0")
 key_name = "Inquisitor"
 display_name = {
-"default": "Inquisitor",
+"de": "",
+"default": "Baldwin",
 "en": ""
 }
-description = "The main character of the game"
+description = "The main character of the game.
+"

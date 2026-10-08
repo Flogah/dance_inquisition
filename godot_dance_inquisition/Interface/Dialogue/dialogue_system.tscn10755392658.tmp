@@ -14,13 +14,13 @@ _dialog_data_uid = 6756654961219639610
 _dialog_file_name = "SproutyTest"
 _dialog_data = ExtResource("7_2qy82")
 _start_id = "TEST_CONVERSATION"
-_play_on_ready = true
-_destroy_on_end = true
+_play_on_ready = false
+_destroy_on_end = false
 _print_debug = false
-Inquisitor_portraits_parent = NodePath("../MainControl/PortraitContainer")
-Inquisitor_dialog_box_parent = NodePath("../MainControl/VBoxContainer/DialogContainer")
-Monk_portraits_parent = NodePath("../MainControl/PortraitContainer")
-Monk_dialog_box_parent = NodePath("../MainControl/VBoxContainer/DialogContainer")
+Inquisitor_portraits_parent = NodePath("../MainControl/HBoxContainer/MiddlePortrait/PortraitContainer")
+Inquisitor_dialog_box_parent = NodePath("../MainControl")
+Monk_portraits_parent = NodePath("../MainControl/HBoxContainer/MiddlePortrait/PortraitContainer")
+Monk_dialog_box_parent = NodePath("../MainControl")
 metadata/_custom_type_script = "uid://1mxdpoyob13n"
 
 [node name="MainControl" type="Control" parent="." unique_id=646766049]
@@ -32,19 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PortraitContainer" type="Control" parent="MainControl" unique_id=1982520699]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 289.0
-offset_right = 289.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainControl" unique_id=1492392471]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainControl" unique_id=1306037198]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,14 +40,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Empty" type="Control" parent="MainControl/VBoxContainer" unique_id=984518540]
+[node name="LeftEmpty" type="Control" parent="MainControl/HBoxContainer" unique_id=345915596]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
 
-[node name="Empty2" type="Control" parent="MainControl/VBoxContainer" unique_id=1444515114]
+[node name="MiddlePortrait" type="Control" parent="MainControl/HBoxContainer" unique_id=565633526]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
 
-[node name="DialogContainer" type="Control" parent="MainControl/VBoxContainer" unique_id=1368679888]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="PortraitContainer" type="Control" parent="MainControl/HBoxContainer/MiddlePortrait" unique_id=1982520699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2

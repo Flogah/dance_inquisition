@@ -6,7 +6,8 @@
 script = ExtResource("1_5nvr8")
 key_name = "Monk"
 display_name = {
-"default": "Monk",
+"de": "",
+"default": "Bruder Wolfram",
 "en": ""
 }
 description = "The suspect. He is guilty."
