@@ -1,0 +1,2 @@
+class_name NonPlayerCharacter
+extends Node3D

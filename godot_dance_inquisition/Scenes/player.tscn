@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3cdyyaeaob7i" path="res://Scenes/player.gd" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://ds6pltcci6mtv" path="res://Scenes/interaction_area.tscn" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://b53etgg82yl48" path="res://Interface/Dialogue/dialogue_system.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryoya"]
 radius = 0.4033203
@@ -36,7 +37,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4922823, 0)
 radius = 0.3415705
 
 [node name="InteractionArea" parent="." unique_id=761187986 instance=ExtResource("2_6t5aa")]
+unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=390582785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8715296, 0)
 shape = SubResource("SphereShape3D_ryoya")
+
+[node name="DialogueSystem" parent="." unique_id=2051798082 instance=ExtResource("3_6t5aa")]
+unique_name_in_owner = true
+
+[node name="UI_Hints" type="CanvasLayer" parent="." unique_id=1072308722]
+
+[node name="Label" type="Label" parent="UI_Hints" unique_id=1377066098]
+offset_left = 34.0
+offset_top = 35.0
+offset_right = 228.0
+offset_bottom = 136.0
+text = "Bewegung: WASD
+Interaktion: E
+Hinweis finden: O
+Dialog weiter: LEERTASTE"

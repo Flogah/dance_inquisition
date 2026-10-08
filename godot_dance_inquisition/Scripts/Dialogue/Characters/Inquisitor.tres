@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SproutyDialogsCharacterData" format=3 uid="uid://cfn6cmdw0o0k8"]
+
+[ext_resource type="Script" uid="uid://kwoapf8il7ee" path="res://addons/sprouty_dialogs/resources/character_data.gd" id="1_vhmr0"]
+
+[resource]
+script = ExtResource("1_vhmr0")
+key_name = "Inquisitor"
+display_name = {
+"de": "",
+"default": "Baldwin",
+"en": ""
+}
+description = "The main character of the game.
+"

@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://b53etgg82yl48"]
 
 [ext_resource type="Script" uid="uid://d20rnroimqc2t" path="res://Interface/Dialogue/dialogue_manager.gd" id="1_1w1t2"]
-[ext_resource type="Script" uid="uid://i0gbkagxjmme" path="res://Interface/Dialogue/scroll_container.gd" id="1_66pnj"]
-[ext_resource type="Texture2D" uid="uid://w3shf5rbnesv" path="res://icon.svg" id="1_f4nbm"]
-[ext_resource type="Theme" uid="uid://b0mik77376jfc" path="res://Interface/InterfaceThemes/Theme_Baskerville.tres" id="4_od80q"]
-[ext_resource type="Theme" uid="uid://dta2cqlo02ui2" path="res://Interface/InterfaceThemes/Theme_Libron.tres" id="5_y2u7o"]
+[ext_resource type="Script" uid="uid://1mxdpoyob13n" path="res://addons/sprouty_dialogs/nodes/dialog_player.gd" id="6_fipk2"]
+[ext_resource type="Resource" uid="uid://c3i8ec1rlk0uo" path="res://Scripts/Dialogue/SproutyTest.tres" id="7_2qy82"]
 
 [node name="DialogueSystem" type="CanvasLayer" unique_id=2051798082]
 script = ExtResource("1_1w1t2")
+
+[node name="DialogPlayer" type="Node" parent="." unique_id=53326744 node_paths=PackedStringArray("Inquisitor_portraits_parent", "Inquisitor_dialog_box_parent", "Monk_portraits_parent", "Monk_dialog_box_parent")]
+unique_name_in_owner = true
+script = ExtResource("6_fipk2")
+_dialog_data_uid = 6756654961219639610
+_dialog_file_name = "SproutyTest"
+_dialog_data = ExtResource("7_2qy82")
+_start_id = "TEST_CONVERSATION"
+_play_on_ready = false
+_destroy_on_end = false
+_print_debug = false
+Inquisitor_portraits_parent = NodePath("../MainControl/PortraitContainer")
+Inquisitor_dialog_box_parent = NodePath("../MainControl/VBoxContainer/DialogContainer")
+Monk_portraits_parent = NodePath("../MainControl/PortraitContainer")
+Monk_dialog_box_parent = NodePath("../MainControl/VBoxContainer/DialogContainer")
+metadata/_custom_type_script = "uid://1mxdpoyob13n"
 
 [node name="MainControl" type="Control" parent="." unique_id=646766049]
 unique_name_in_owner = true
@@ -18,7 +32,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainControl" unique_id=1306037198]
+[node name="PortraitContainer" type="Control" parent="MainControl" unique_id=1982520699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 289.0
+offset_right = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainControl" unique_id=1492392471]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,70 +52,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LeftEmpty" type="Control" parent="MainControl/HBoxContainer" unique_id=345915596]
+[node name="Empty" type="Control" parent="MainControl/VBoxContainer" unique_id=984518540]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="MiddlePortrait" type="Control" parent="MainControl/HBoxContainer" unique_id=565633526]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="MainControl/HBoxContainer/MiddlePortrait" unique_id=509984829]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -64.0
-offset_bottom = 64.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("1_f4nbm")
-
-[node name="RightDialogue" type="PanelContainer" parent="MainControl/HBoxContainer" unique_id=139357837]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="MainControl/HBoxContainer/RightDialogue" unique_id=325989113]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer" unique_id=805272343]
-unique_name_in_owner = true
-layout_mode = 2
-script = ExtResource("1_66pnj")
-
-[node name="DialogueContainer" type="VBoxContainer" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer" unique_id=1901109376]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 26
-alignment = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=1174162054]
+[node name="Empty2" type="Control" parent="MainControl/VBoxContainer" unique_id=1444515114]
 layout_mode = 2
-theme = ExtResource("4_od80q")
-bbcode_enabled = true
-text = "[b]Actor:[/b] Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-"
-fit_content = true
+size_flags_vertical = 3
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=1098157688]
+[node name="DialogContainer" type="Control" parent="MainControl/VBoxContainer" unique_id=1368679888]
 layout_mode = 2
-theme = ExtResource("5_y2u7o")
-bbcode_enabled = true
-text = "[b]Actor:[/b] Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
-fit_content = true
-
-[node name="Button" type="Button" parent="MainControl/HBoxContainer/RightDialogue/MarginContainer/ScrollContainer/DialogueContainer" unique_id=1729157916]
-layout_mode = 2
-text = "Button"
+size_flags_vertical = 3

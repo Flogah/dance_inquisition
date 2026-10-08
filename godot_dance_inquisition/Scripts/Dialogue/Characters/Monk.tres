@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SproutyDialogsCharacterData" format=3 uid="uid://dr8rv5esjax15"]
+
+[ext_resource type="Script" uid="uid://kwoapf8il7ee" path="res://addons/sprouty_dialogs/resources/character_data.gd" id="1_5nvr8"]
+
+[resource]
+script = ExtResource("1_5nvr8")
+key_name = "Monk"
+display_name = {
+"de": "",
+"default": "Bruder Wolfram",
+"en": ""
+}
+description = "The suspect. He is guilty."

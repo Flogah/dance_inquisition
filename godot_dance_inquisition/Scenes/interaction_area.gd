@@ -1,6 +1,8 @@
 extends Area3D
 class_name InteractionArea
 
+signal interacted_with_npc(npc)
+
 var interactables: Array[InteractableArea]
 var active: InteractableArea
 
@@ -9,7 +11,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("interact"):
 		interact()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,6 +27,8 @@ func _process(delta: float) -> void:
 func interact():
 	if active is InteractableArea:
 		active.interact()
+		if active.owner is NonPlayerCharacter:
+			interacted_with_npc.emit(active)
 
 func _on_area_entered(area: Area3D) -> void:
 	if area is InteractableArea:

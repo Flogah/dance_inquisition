@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b53etgg82yl48"]
+
+[ext_resource type="Script" uid="uid://d20rnroimqc2t" path="res://Interface/Dialogue/dialogue_manager.gd" id="1_1w1t2"]
+[ext_resource type="Script" uid="uid://1mxdpoyob13n" path="res://addons/sprouty_dialogs/nodes/dialog_player.gd" id="6_fipk2"]
+[ext_resource type="Resource" uid="uid://c3i8ec1rlk0uo" path="res://Scripts/Dialogue/SproutyTest.tres" id="7_2qy82"]
+
+[node name="DialogueSystem" type="CanvasLayer" unique_id=2051798082]
+script = ExtResource("1_1w1t2")
+
+[node name="DialogPlayer" type="Node" parent="." unique_id=53326744 node_paths=PackedStringArray("Inquisitor_portraits_parent", "Inquisitor_dialog_box_parent", "Monk_portraits_parent", "Monk_dialog_box_parent")]
+unique_name_in_owner = true
+script = ExtResource("6_fipk2")
+_dialog_data_uid = 6756654961219639610
+_dialog_file_name = "SproutyTest"
+_dialog_data = ExtResource("7_2qy82")
+_start_id = "TEST_CONVERSATION"
+_play_on_ready = false
+_destroy_on_end = false
+_print_debug = false
+Inquisitor_portraits_parent = NodePath("../MainControl/HBoxContainer/MiddlePortrait/PortraitContainer")
+Inquisitor_dialog_box_parent = NodePath("../MainControl")
+Monk_portraits_parent = NodePath("../MainControl/HBoxContainer/MiddlePortrait/PortraitContainer")
+Monk_dialog_box_parent = NodePath("../MainControl")
+metadata/_custom_type_script = "uid://1mxdpoyob13n"
+
+[node name="MainControl" type="Control" parent="." unique_id=646766049]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainControl" unique_id=1306037198]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftEmpty" type="Control" parent="MainControl/HBoxContainer" unique_id=345915596]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiddlePortrait" type="Control" parent="MainControl/HBoxContainer" unique_id=565633526]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PortraitContainer" type="Control" parent="MainControl/HBoxContainer/MiddlePortrait" unique_id=1982520699]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
