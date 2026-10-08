@@ -1,6 +1,8 @@
 extends Area3D
 class_name InteractionArea
 
+signal interacted_with_npc(npc)
+
 var interactables: Array[InteractableArea]
 var active: InteractableArea
 
@@ -25,6 +27,8 @@ func _process(delta: float) -> void:
 func interact():
 	if active is InteractableArea:
 		active.interact()
+		if active.owner is NonPlayerCharacter:
+			interacted_with_npc.emit(active)
 
 func _on_area_entered(area: Area3D) -> void:
 	if area is InteractableArea:
