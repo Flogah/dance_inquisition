@@ -9,7 +9,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("interact"):
 		interact()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
