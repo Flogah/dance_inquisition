@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dhkeml1kux7st"]
+
+[ext_resource type="Script" uid="uid://c3cdyyaeaob7i" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://ds6pltcci6mtv" path="res://Scenes/interaction_area.tscn" id="2_6t5aa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ryoya"]
+radius = 0.4033203
+height = 1.7841797
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ryoya"]
+radius = 0.80212015
+
+[node name="Player" type="CharacterBody3D" unique_id=420776057]
+script = ExtResource("1_cvnsp")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=14660956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67289025, 0)
+radius = 0.32080078
+height = 1.3315918
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1036615340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8991475, 0)
+shape = SubResource("CapsuleShape3D_ryoya")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1358930088]
+remote_path = NodePath("..")
+update_rotation = false
+update_scale = false
+
+[node name="Camera3D" type="Camera3D" parent="RemoteTransform3D" unique_id=1649468367]
+transform = Transform3D(0.920329, -0.18644531, 0.34384984, 0, 0.8790849, 0.4766652, -0.3911452, -0.43868878, 0.8090473, 4.8981323, 8.161377, 10.622314)
+fov = 36.7
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1354122995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4922823, 0)
+radius = 0.3415705
+
+[node name="InteractionArea" parent="." unique_id=761187986 instance=ExtResource("2_6t5aa")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=390582785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8715296, 0)
+shape = SubResource("SphereShape3D_ryoya")
