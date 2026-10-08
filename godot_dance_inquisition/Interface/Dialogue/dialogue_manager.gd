@@ -13,8 +13,12 @@ var example_choice_dict:Dictionary = {
 }
 
 func _ready() -> void:
-	set_visibility(true)
+	set_visibility(false)
 	##scroll_container.choice_selected.connect(use_choice)
+
+func start_dialog():
+	set_visibility(true)
+	dialog_player.start()
 
 func use_choice(choice):
 	print(choice)
@@ -48,9 +52,3 @@ func disappear():
 	# maybe not necessary, as the dialogue is already alphad out?
 	# maybe saves perf
 	disappear_tween.finished.connect(func(): visible = false)
-
-#func add_dialogue_choices(choice_dict:Dictionary = example_choice_dict):
-	#scroll_container.add_choices(choice_dict)
-#
-#func display_speech(actor:String, text:String):
-	#scroll_container.add_dialogue_text(actor, text)

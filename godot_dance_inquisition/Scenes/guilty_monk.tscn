@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dm0ifuhekrw2y"]
 
+[ext_resource type="Script" uid="uid://c05fcim4d04f5" path="res://Scenes/guilty_monk.gd" id="1_14dcy"]
 [ext_resource type="PackedScene" uid="uid://dl5xn8xtsbd7e" path="res://Scenes/interactable_area.tscn" id="1_sax1o"]
 [ext_resource type="PackedScene" uid="uid://b53etgg82yl48" path="res://Interface/Dialogue/dialogue_system.tscn" id="2_14dcy"]
 
@@ -7,6 +8,7 @@
 radius = 0.8376288
 
 [node name="GuiltyMonk" type="Node3D" unique_id=1944299037]
+script = ExtResource("1_14dcy")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1783493459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67289025, 0)
@@ -18,11 +20,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4922823, 0)
 radius = 0.3415705
 
 [node name="InteractableArea" parent="." unique_id=422659051 instance=ExtResource("1_sax1o")]
+unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea" unique_id=38105464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85972655, 0)
 shape = SubResource("SphereShape3D_ryoya")
 
 [node name="DialogueSystem" parent="." unique_id=2051798082 instance=ExtResource("2_14dcy")]
-
-[connection signal="interacted" from="InteractableArea" to="DialogueSystem" method="appear"]
+unique_name_in_owner = true

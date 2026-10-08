@@ -85,7 +85,7 @@ rendering_device/driver.windows="d3d12"
 
 general/input/continue_input_action="dialogs_continue_action"
 general/input/save_sprouty_only=true
-general/defaults/default_dialog_box=1568908516147823318
+general/defaults/default_dialog_box=9193369469119702899
 general/defaults/default_portrait_scene=5003988533333559685
 general/canvas/dialog_box_canvas_layer=2
 general/canvas/portraits_canvas_layer=1
@@ -116,8 +116,8 @@ internal/last_opened_files=[{
 "path": "res://Scripts/Dialogue/SproutyTest.tres",
 "uid": 6756654961219639610,
 "view_state": {
-"scroll_offset": Vector2(-77.886185, -143.02728),
-"zoom": 0.28140724
+"scroll_offset": Vector2(-122.155945, -232.22598),
+"zoom": 0.25582474
 }
 }, {
 "path": "res://Scripts/Dialogue/Characters/Inquisitor.tres",
