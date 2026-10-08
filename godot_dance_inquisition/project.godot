@@ -109,15 +109,34 @@ translation/characters/use_csv_for_character_names=false
 translation/characters/character_names_csv=-1
 translation/localization/default_locale="de"
 translation/localization/locales=["en", "de"]
-internal/variables={}
+internal/variables={
+"book_shown": {
+"index": 1,
+"metadata": {},
+"type": 1,
+"value": false
+},
+"found_bloody_rag": {
+"index": 2,
+"metadata": {},
+"type": 1,
+"value": true
+},
+"has_book": {
+"index": 0,
+"metadata": {},
+"type": 1,
+"value": false
+}
+}
 internal/play_dialog_path="res://Scripts/Dialogue/SproutyTest.tres"
 internal/play_start_id="TEST_CONVERSATION"
 internal/last_opened_files=[{
 "path": "res://Scripts/Dialogue/SproutyTest.tres",
 "uid": 6756654961219639610,
 "view_state": {
-"scroll_offset": Vector2(-122.155945, -232.22598),
-"zoom": 0.25582474
+"scroll_offset": Vector2(-81.143005, -111.26136),
+"zoom": 0.23256795
 }
 }, {
 "path": "res://Scripts/Dialogue/Characters/Inquisitor.tres",
